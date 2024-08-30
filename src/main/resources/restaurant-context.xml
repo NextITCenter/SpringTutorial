@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 자바의
+    Restaurant restaurant = new Restaurant("아웃백", "대전 중구 계룡로 824", "042-718-5567");
+    와 동일한 코드
+    -->
+    <bean id="restaurant" class="kr.or.nextit.springtutorial.di.Restaurant">
+        <constructor-arg name="name" value="아웃백"/>
+        <constructor-arg name="address" value="대전 중구 계룡로 824"/>
+        <constructor-arg name="phone" value="042-718-5567"/>
+        <!--
+        List<Chef> chefs = new ArrayList<>();
+        chefs.add(chef1);
+        chefs.add(chef2);
+        restaurant.setChefs(chefs);
+         -->
+        <property name="chefs">
+            <list>
+                <ref bean="chef1"/>
+                <ref bean="chef2"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="chef1" class="kr.or.nextit.springtutorial.di.Chef">
+        <constructor-arg name="name" value="미소"/>
+        <constructor-arg name="age" value="20"/>
+    </bean>
+    <bean id="chef2" class="kr.or.nextit.springtutorial.di.Chef">
+        <constructor-arg name="name" value="쵸파"/>
+        <constructor-arg name="age" value="25"/>
+    </bean>
+</beans>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="espressoCoffeeMachine" class="kr.or.nextit.springtutorial.cafe.EspressoCoffeeMachine"></bean>
+    <bean id="barista" class="kr.or.nextit.springtutorial.cafe.Barista">
+        <constructor-arg name="coffeeMachine" ref="espressoCoffeeMachine"/>
+    </bean>
+    <bean id="cafe" class="kr.or.nextit.springtutorial.cafe.Cafe">
+        <constructor-arg name="barista" ref="barista"/>
+    </bean>
+</beans>
