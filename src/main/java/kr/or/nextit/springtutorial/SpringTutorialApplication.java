@@ -1,6 +1,7 @@
 package kr.or.nextit.springtutorial;
 
 import kr.or.nextit.springtutorial.di.Restaurant;
+import kr.or.nextit.springtutorial.library.Library;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -13,6 +14,8 @@ public class SpringTutorialApplication {
 		ConfigurableApplicationContext context = SpringApplication.run(SpringTutorialApplication.class, args);
 		Restaurant restaurant = context.getBean("restaurant", Restaurant.class);
 		System.out.println(restaurant);
+		Library library = context.getBean("library", Library.class);
+		System.out.println(library);
 	}
 
 }
