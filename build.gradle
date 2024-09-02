@@ -18,7 +18,11 @@ repositories {
 }
 
 dependencies {
+	// compile time(코딩할 때), runtime(사용자가 실행할 때)
+	// implementation: compile time, runtime
 	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.aspectj:aspectjweaver'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
